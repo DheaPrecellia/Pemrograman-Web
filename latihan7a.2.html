@@ -1,0 +1,69 @@
+<HTML>
+<HEAD><TITLE>Latihan Biodata Mahasiswa</TITLE></HEAD>
+<BODY>
+<SCRIPT language="JavaScript">
+<!--
+function tampilkanBiodata(){
+    var nama = document.fform.inama.value;
+    var nim = document.fform.inim.value;
+    var jenisKelamin = document.fform.ijenis.value;
+    var jurusan = document.fform.ijurusan.value;
+    var hobi = [];
+    var checkboxes = document.fform.ihobi;
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            hobi.push(checkboxes[i].value);
+        }
+    }
+    var alamat = document.fform.ialamat.value;
+    
+    var output = "Biodata Mahasiswa\n\n" +
+                 "Nama: " + nama + "\n" +
+                 "NIM: " + nim + "\n" +
+                 "Jenis Kelamin: " + jenisKelamin + "\n" +
+                 "Jurusan: " + jurusan + "\n" +
+                 "Hobi: " + (hobi.length > 0 ? hobi.join(", ") : "Tidak ada hobi yang dipilih") + "\n" +
+                 "Alamat: " + alamat;
+    
+    document.fform.ohasil.value = output;
+}
+//-->
+</SCRIPT>
+<FORM NAME="fform">
+<table border="1" align="center" width="70%">
+<tr>
+<td width="100%" colspan="2"><H2 ALIGN="center">Form Biodata Mahasiswa</H2></td>
+</tr>
+<tr>
+<td width="50%"><PRE>
+Nama: <input type="text" size="20" name="inama">
+NIM: <input type="text" size="20" name="inim">
+Jenis Kelamin:
+<input type="radio" name="ijenis" value="Laki-laki" checked>Laki-laki
+<input type="radio" name="ijenis" value="Perempuan">Perempuan
+Jurusan: <select name="ijurusan" size=1>
+    <option value="Teknik Informatika">Teknik Informatika</option>
+    <option value="Sistem Informasi">Sistem Informasi</option>
+    <option value="Manajemen">Manajemen</option>
+</select>
+Hobi:
+<input type="checkbox" name="ihobi" value="Membaca">Membaca
+<input type="checkbox" name="ihobi" value="Menulis">Menulis
+<input type="checkbox" name="ihobi" value="Olahraga">Olahraga
+Alamat: <textarea name="ialamat" rows="4" cols="30"></textarea>
+</PRE></td>
+<td width="50%"><PRE>
+Hasil Input: <textarea name="ohasil" rows="10" cols="30" readonly></textarea>
+</PRE></td>
+</tr>
+<tr>
+<td width="100%" colspan="2">
+<center>
+<INPUT TYPE="button" value="Tampilkan" onclick="tampilkanBiodata()">
+<INPUT TYPE="reset" value="Ulang">
+</center></td>
+</tr>
+</table>
+</FORM>
+</BODY>
+</HTML>

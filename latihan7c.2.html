@@ -1,0 +1,59 @@
+<HTML>
+<HEAD><TITLE>Latihan Event JavaScript</TITLE></HEAD>
+<BODY>
+<SCRIPT LANGUAGE="JavaScript">
+function warna(pilihan) {
+    alert("Anda Memilih Warna " + pilihan);
+    document.bgColor = pilihan;
+}
+
+function ubahWarna(pilihan) {
+    document.bgColor = pilihan;
+}
+
+function mouseOverTombol(tombol) {
+    tombol.style.backgroundColor = "yellow";
+    alert("Mouse berada di atas tombol " + tombol.value);
+}
+
+function mouseOutTombol(tombol) {
+    tombol.style.backgroundColor = "";
+}
+
+function fokusInput(input) {
+    input.style.backgroundColor = "lightgreen";
+    alert("Input " + input.name + " sedang difokuskan");
+}
+</SCRIPT>
+<h1 align="center">Latihan Event JavaScript</h1>
+<hr width="500" color="black">
+<h3 align="center">Pilih warna background favorit anda.</h3>
+<CENTER>
+<FORM>
+<select name="pilihwarna" onChange="ubahWarna(this.value)">
+    <option value="lightblue">Biru</option>
+    <option value="pink">Pink</option>
+    <option value="burlywood">Coklat</option>
+    <option value="darkgray">Kelabu</option>
+    <option value="peachpuff">Oranye</option>
+    <option value="white">Putih</option>
+</select>
+<BR><BR>
+<INPUT TYPE="button" VALUE="Biru" onClick="warna('lightblue')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+<INPUT TYPE="button" VALUE="Pink" onClick="warna('pink')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+<INPUT TYPE="button" VALUE="Coklat" onClick="warna('burlywood')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+<INPUT TYPE="button" VALUE="Kelabu" onClick="warna('darkgray')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+<INPUT TYPE="button" VALUE="Oranye" onClick="warna('peachpuff')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+<INPUT TYPE="button" VALUE="Putih" onClick="warna('white')" onMouseOver="mouseOverTombol(this)" onMouseOut="mouseOutTombol(this)">
+</FORM>
+<FORM>
+<IMG NAME="coolfan" SRC="fan_off.gif" width="61" height="72"><BR><BR>
+<INPUT TYPE="text" NAME="inputTeks" onFocus="fokusInput(this)" placeholder="Klik di sini untuk fokus">
+<BR><BR>
+<INPUT TYPE="button" VALUE="Off" onClick="coolfan.src='fan_off.gif'">
+<INPUT TYPE="button" VALUE="On" onClick="coolfan.src='fan_on.gif'">
+</FORM>
+</CENTER>
+<hr width="500" color="black">
+</BODY>
+</HTML>
